@@ -14,7 +14,6 @@ This also helps get the data and key.
 # How to install it
 1. Install file, and import to project
 2. Import it by using "from DataPro import *"
-3. 
 # How to use it
 File:
 ARGS: File
