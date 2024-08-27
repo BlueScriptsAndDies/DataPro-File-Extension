@@ -1,6 +1,9 @@
 # What is .DataPro?
 Its a file extension I made, its like json but worse, this has 2 parts, key and data.
 
+# How to import
+```from DataProFileExt import *```/```from DataProFileExt import File```
+
 # What is the key?
 You dont need to use it, but can be like a password, or anything you choose!
 
@@ -12,6 +15,10 @@ Its the ID of the file, this can be used as a better way to find a file, the ID 
 This also helps get the data and key. 
 
 # How to install it
+Pip:
+```pip install DataProFileExt```
+
+Source
 1. Install file, and import to project
 2. Import it by using "from DataPro import *"
 # How to use it
@@ -27,4 +34,23 @@ Unload:
 ARGS: None
 This will unload the last load, key, data and id. to do this, set a var to unload, then just use var_of_unload[0 = last load, 1 = key 2 = data 3 = id]
 
+# Example Script
+
+```
+from DataProFileExt import File
+
+new = File("test.DataPro")
+
+new.load("CompleteTask1",True)
+
+unload = new.unload()
+
+var1 = unload[2].lower() == "true"
+
+if unload[1] == "CompleteTask1":
+    if var1:
+        print("Amazing!")
+    else:
+        print("Ur fired.")
+```
 
