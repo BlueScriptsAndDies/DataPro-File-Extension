@@ -20,7 +20,7 @@ class File:
 				print("File anit a .DataPro")
 				dont = True
 		else:
-			print(f"{self.file} doesnt exist dumbass.")
+			print(f"{self.file} doesnt exist.")
 			dont = True
 
 
@@ -29,7 +29,9 @@ class File:
 			print("nuh uh")
 			return
 		else:
-			__id__ = f"ID:{datetime.datetime.now()} {len(str(key))}::{len(str(data))}"
+			date = datetime.datetime.now()
+			formatted_now = date.strftime('%Y-%m-%d %H:%M:%S.%f')
+			__id__ = f"ID:{date} {len(str(key))}::{len(str(data))}"
 
 			with open (self.file,'w') as file:
 				data_format = "{{Data:{}}}".format(str(data))
@@ -77,5 +79,5 @@ class File:
 
 		last_load = (f"Last Load: {date}, Time Of day when load:{time_of_date}")
 		#gonna do id bc i couldnt get the first one to be global
-		__id__ = file_data[slice(3,34 + len(str(num_of_key_chars)))]
+		__id__ = file_data[slice(3,34 + len(str(num_of_key_chars)))].strip()
 		return  last_load, key, data, __id__
